@@ -198,7 +198,87 @@ function multiplyNumeric(obj, times){
 }
 
 multiplyNumeric(menu, 4);
+```  
+#### 6. Methods ของ Object  
+#### 6.6.1 การทำงานของ code ดังกล่าวจะได้อะไรออกมา  
 ```
+let user = {
+  name: "John",
+  go: function() { alert(this.name) }
+}
 
+(user.go)()
+```
+#### output:
+```
+undefined
+```  
+#### 6.6.2 การทำงานของ code ดังกล่าวจะได้อะไรออกมา  
+```
+function makeUser() {
+  return {
+    name: "John",
+    ref: this
+  };
+};
+
+let user = makeUser();
+
+alert( user.ref.name ); // What's the result?
+```
+#### output:
+```
+undefined
+```  
+#### 6.6.3 สร้าง object calculator จาก 3 methods นี้ read() ใช้ prompts สำหรับรับค่ามา 2 ค่าและเก็บเป็น object properties. sum() คืนค่าผลบวกของ 2 ค่านั้น.
+mul() คืนค่าผลคูณของ 2 ค่านั้น.
+```  
+let calculator = {
+    read(number1, number2){
+        this.number1 = number1
+        this.number2 = number2
+    },
+    mul: function(){
+        return this.number1  * this.number2;
+    },
+    sum(){
+        return this.number1 + this.number2;
+    }
+};
+calculator.read(3,4)
+alert( calculator.mul())
+alert(calculator.sum())
+```  
+---
+#### 7. Constructor กับ New
+####  7.4. แบบฝึกหัด 
+#### 1. สร้าง constructor function ที่ใช้สำหรับสร้าง Calculator โดยต้องมี 3 Methods น้ี  
+* a. read(): รับค่าจาก propmt สองตัว
+* b. sum(): ให้คืนค่าจากการบวกกันของตัวแปรสองตัว  
+* c. mul(): ให้คืนค่าจากการคูณกันของตัวแปรสองตัว
+ ```  
+ function Calculator(){
+    this.read =  function(){
+        this.number1 = Number(prompt('Enter Number 1 : '));
+        this.number2 = Number(prompt('Enter Number 2 : ')); 
+    }
+    this.sum = function(){
+        return this.number1 + this.number2 
+    }
+    this.mul = function(){
+        return this.number1 * this.number2
+    }
+
+}
+let casio = new Calculator();
+ ```  
+ ```  
+ // output
+ casio.read();// 3 , 4  
+ casio.sum(); // 7
+ casio.mul(); // 12
+ ```
+ ```
+ ```
 
 
