@@ -276,7 +276,8 @@ let casio = new Calculator();
  // output
  casio.read();// 3 , 4  
  casio.sum(); // 7
- casio.mul(); // 12
+ casio.mul(); // 12  
+  ```
  ```
  ```
  ```
