@@ -272,6 +272,7 @@ alert(calculator.sum())
 }
 let casio = new Calculator();
  ```  
+ ```
  ```  
  // output
  casio.read();// 3,4  
